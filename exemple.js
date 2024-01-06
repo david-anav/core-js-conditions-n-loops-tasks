@@ -1,17 +1,15 @@
-
-function getIndexOf(str, letter) {
-  for (let i = 0; i < str.length-1; i +=1){
-    if (str[i] === letter){
-      return i;
+function isContainNumber(num, digit) {
+  const numToStr = String(num);
+  let s = 0;
+  do {
+    if( numToStr[s] === String(digit)){
+      return true;
     }
-  }
-  return -1;
+    s += 1;
+  }while(s <= numToStr.length)
+  return false;
 }
 
 
-
-
-
-
-console.log(getIndexOf('qwerty', 't'));
+console.log(isContainNumber(123450, 5));
 
