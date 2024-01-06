@@ -1,18 +1,51 @@
-function convertToRomanNumerals(num) {
-  const arrRim = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
-  if (num <= 10) {
-    return arrRim[num - 1];
+// '1'        'one'
+// '10'       'one zero'
+// '-10'      'minus one zero'
+// '10.5'     'one zero point five'
+// '10,5'     'one zero point five'
+// '1950.2'   'one nine five zero point two'
+function convertNumberToString(numberStr) {
+  const arrNumb = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+  ];
+  const len = numberStr.length;
+  let numToStr = '';
+  let i = 0;
+  while (i < len) {
+    const letter = numberStr[i];
+
+    if (len === 1) {
+      return arrNumb[letter];
+    }
+    switch (letter) {
+      case '.':
+        numToStr += ' point';
+        break;
+      case ',':
+        numToStr += ' point';
+        break;
+      case '-':
+        numToStr += 'minus';
+        break;
+      default:
+        numToStr += `${arrNumb[Number(letter)]}`;
+        if (i !== len - 1) {
+          numToStr += ' ';
+        }
+        break;
+    }
+    i += 1;
   }
-  if (num > 10 && num <= 20) {
-    return `X${arrRim[num - 10 - 1]}`;
-  }
-  if (num > 20 && num <= 30) {
-    return `XX${arrRim[num - 20 - 1]}`;
-  }
-  if (num < 39) {
-    return `XXX${arrRim[num - 30 - 1]}`;
-  }
-  return 'XXXIX';
+  return numToStr;
 }
-const num = 37;
-console.log(convertToRomanNumerals(num));
+console.log(convertNumberToString('10'));
+
