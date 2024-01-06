@@ -1,13 +1,17 @@
 
-function isPalindrome(str) {
-  let polindrom = '';
-  const len = str.length;
-  for (let i = len-1; i >= 0; i -= 1) {
-    let lastChar = str[i];
-    polindrom += lastChar;
-
+function getIndexOf(str, letter) {
+  for (let i = 0; i < str.length-1; i +=1){
+    if (str[i] === letter){
+      return i;
+    }
   }
-   return str === polindrom ? true : false;
+  return -1;
 }
-console.log(isPalindrome('abcba'));
+
+
+
+
+
+
+console.log(getIndexOf('qwerty', 't'));
 
