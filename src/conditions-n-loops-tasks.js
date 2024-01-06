@@ -206,13 +206,13 @@ function convertNumberToString(numberStr) {
  *  'qweqwe'    => false
  */
 function isPalindrome(str) {
-  let polindrom = '';
+  let palindrome = '';
   const len = str.length;
   for (let i = len - 1; i >= 0; i -= 1) {
     const lastChar = str[i];
-    polindrom += lastChar;
+    palindrome += lastChar;
   }
-  return str === polindrom;
+  return str === palindrome;
 }
 
 /**
