@@ -399,7 +399,7 @@ describe('core-js-conditions-n-loops', () => {
       assert.equal(
         forbidden.isCommented(tasks.getSpiralMatrix),
         false,
-        `Be sure to remove comments from the final solution`
+        `Be sure to remove comments f rom the final solution`
       );
       assert.equal(
         forbidden.isArrayUsed(tasks.getSpiralMatrix),
